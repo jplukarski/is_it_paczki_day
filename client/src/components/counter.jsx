@@ -1,66 +1,63 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Switch from '@material-ui/core/Switch';
-import Paper from '@material-ui/core/Paper';
-import Grow from '@material-ui/core/Grow';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        height: 180,
+
+    textField: {
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1),
+        width: 50
     },
-    container: {
-        display: 'flex',
-    },
-    paper: {
-        margin: theme.spacing(1),
-    },
-    svg: {
-        width: 100,
-        height: 100,
-    },
-    polygon: {
-        fill: theme.palette.common.white,
-        stroke: theme.palette.divider,
-        strokeWidth: 1,
-    },
+
 }));
 
 export default function Counter() {
+
     const classes = useStyles();
-    const [checked, setChecked] = React.useState(false);
-
-    function handleChange() {
-        setChecked(prev => !prev);
-    }
-
     return (
-        <div className={classes.root}>
-            <FormControlLabel
-                control={<Switch checked={checked} onChange={handleChange} />}
-                label="Show"
+        <>
+            <TextField
+                label="Days"
+                defaultValue="123"
+                fullWidth={false}
+                className={classes.textField}
+                margin="normal"
+                InputProps={{
+                    readOnly: true,
+                }}
+                variant="outlined"
             />
-            <div className={classes.container}>
-                <Grow in={checked}>
-                    <Paper elevation={4} className={classes.paper}>
-                        <svg className={classes.svg}>
-                            <polygon points="0,100 50,00, 100,100" className={classes.polygon} />
-                        </svg>
-                    </Paper>
-                </Grow>
-                {/* Conditionally applies the timeout prop to change the entry speed. */}
-                <Grow
-                    in={checked}
-                    style={{ transformOrigin: '0 0 0' }}
-                    {...(checked ? { timeout: 1000 } : {})}
-                >
-                    <Paper elevation={4} className={classes.paper}>
-                        <svg className={classes.svg}>
-                            <polygon points="0,100 50,00, 100,100" className={classes.polygon} />
-                        </svg>
-                    </Paper>
-                </Grow>
-            </div>
-        </div>
+            <TextField
+                label="Hours"
+                defaultValue="12"
+                className={classes.textField}
+                margin="normal"
+                InputProps={{
+                    readOnly: true,
+                }}
+                variant="outlined"
+            />
+            <TextField
+                label="Minutes"
+                defaultValue="23"
+                className={classes.textField}
+                margin="normal"
+                InputProps={{
+                    readOnly: true,
+                }}
+                variant="outlined"
+            />
+            <TextField
+                label="Seconds"
+                defaultValue="13"
+                className={classes.textField}
+                margin="normal"
+                InputProps={{
+                    readOnly: true,
+                }}
+                variant="outlined"
+            />
+        </>
     );
 }
