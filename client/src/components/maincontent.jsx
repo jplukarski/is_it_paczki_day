@@ -6,8 +6,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Counter from './counter';
-var mydate = require('current-date');
-
 
 const useStyles = makeStyles({
     card: {
@@ -20,7 +18,7 @@ const useStyles = makeStyles({
 
 export default function MainContent() {
     const classes = useStyles();
-    const [date, setDate] = useState(mydate("date"))
+    const [date, setDate] = useState(new Date().toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' }))
 
     useEffect(() => {
         var timerID = setInterval(() => tick(), 1000);
@@ -31,7 +29,7 @@ export default function MainContent() {
     });
 
     function tick() {
-        setDate(mydate("date"));
+        setDate(new Date().toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' }));
     }
 
     return (

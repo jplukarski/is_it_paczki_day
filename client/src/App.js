@@ -10,13 +10,13 @@ function App() {
       <Grid
         container
         spacing={0}
-        justify="center"
+      // justify="center"
+      // align="center"
       // style={{ backgroundColor: 'teal' }}
       >
         <Grid
           container
           direction="column"
-          align="center"
         >
           <MainContent />
         </Grid>
