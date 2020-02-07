@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function DenseAppBar() {
+export default function MenuBar() {
 
     return (
         <>

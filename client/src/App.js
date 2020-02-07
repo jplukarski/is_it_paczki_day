@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import MenuBar from './components/menubar'
-import MainContent from './components/maincontent'
+import MainContent from './components/maincontent';
 
-function App() {
+export default function App() {
   return (
     <>
       <MenuBar />
       <MainContent />
+
     </>
   );
 }
-
-export default App;

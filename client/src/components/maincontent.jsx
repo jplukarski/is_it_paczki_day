@@ -1,30 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import Counter from './counter';
+import NotTheDay from './notpacskiday'
+import TheDay from './itspacskiday'
 
 export default function MainContent() {
     const [date, setDate] = useState(new Date().toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' }))
+    // const [paczkiday, setPaczkiday] = useState("February 6, 2020")
+    const [paczkiday, setPaczkiday] = useState("February 25, 2020")
 
-    useEffect(() => {
-        var timerID = setInterval(() => tick(), 1000);
-
-        return function cleanup() {
-            clearInterval(timerID);
-        };
-    });
-
-    function tick() {
-        setDate(new Date().toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' }));
-    }
 
     return (
-        <>
-            <div>
-                It is not Paczki Day today. It is {date}
-            </div>
-            <div>
-                Countdown until Paczki Day 2020 (February 25th)
-            </div>
-            <Counter />
-        </>
-    );
+        date === paczkiday ? <TheDay /> : <NotTheDay />
+    )
+
 }
