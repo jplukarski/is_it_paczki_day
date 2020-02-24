@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import NotTheDay from './notpacskiday'
 import TheDay from './itspacskiday'
 

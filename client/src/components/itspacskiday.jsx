@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import Counter from './counter';
+import React from 'react';
 
 export default function TheDay() {
 
