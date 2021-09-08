@@ -2,6 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 ReactDOM.render( 
-  <div> Is it paczki day ??</div>, 
+  <h1><div> Is it paczki day ?? I think it is!</div></h1>,
   document.getElementById('root')
 );
